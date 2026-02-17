@@ -4,8 +4,9 @@ import HeroDevVisual from './components/HeroDevVisual';
 import PremiumHero from './components/PremiumHero';
 
 // Lazy load below-the-fold components
+const CoreTechnologySearch = React.lazy(() => import('./components/CoreTechnologySearch'));
 const ArchitectureCard = React.lazy(() => import('./components/ArchitectureCard'));
-const ScaleMetricsCard = React.lazy(() => import('./components/ScaleMetricsCard'));
+const PerformanceScaleSection = React.lazy(() => import('./components/PerformanceScaleSection'));
 const InteractiveFeatureShowcase = React.lazy(() => import('./components/InteractiveFeatureShowcase'));
 const AiPipelineSection = React.lazy(() => import('./components/AiPipelineSection'));
 const SecurityInfrastructure = React.lazy(() => import('./components/SecurityInfrastructure'));
@@ -47,6 +48,8 @@ const App: React.FC = () => {
 
         <Suspense fallback={<div className="h-96 flex items-center justify-center text-monday-blue font-bold">Loading Engine...</div>}>
           
+          <CoreTechnologySearch />
+
           {/* Section 2: Dark Green Engine Card */}
           <section className="bg-white py-12 px-6 -mt-16 relative z-10">
             <div className="max-w-6xl mx-auto">
@@ -60,7 +63,7 @@ const App: React.FC = () => {
           {/* Section 3: Deep Navy Scale Card */}
           <section className="bg-white py-12 px-6">
             <div className="max-w-6xl mx-auto">
-               <ScaleMetricsCard />
+               <PerformanceScaleSection />
             </div>
           </section>
 
