@@ -6,6 +6,9 @@ import HeroDevVisual from './components/HeroDevVisual';
 const ArchitectureCard = React.lazy(() => import('./components/ArchitectureCard'));
 const ScaleMetricsCard = React.lazy(() => import('./components/ScaleMetricsCard'));
 const InteractiveFeatureShowcase = React.lazy(() => import('./components/InteractiveFeatureShowcase'));
+const AiPipelineSection = React.lazy(() => import('./components/AiPipelineSection'));
+const SecurityInfrastructure = React.lazy(() => import('./components/SecurityInfrastructure'));
+const InnovationRoadmap = React.lazy(() => import('./components/InnovationRoadmap'));
 
 const App: React.FC = () => {
   return (
@@ -32,12 +35,16 @@ const App: React.FC = () => {
         </section>
 
         <Suspense fallback={<div className="h-96 flex items-center justify-center text-monday-blue font-bold">Loading Engine...</div>}>
+          
           {/* Section 2: Dark Green Engine Card */}
           <section className="bg-white py-12 px-6 -mt-16 relative z-10">
             <div className="max-w-6xl mx-auto">
                <ArchitectureCard />
             </div>
           </section>
+
+          {/* NEW: AI Backend Pipeline */}
+          <AiPipelineSection />
 
           {/* Section 3: Deep Navy Scale Card */}
           <section className="bg-white py-12 px-6">
@@ -46,8 +53,15 @@ const App: React.FC = () => {
             </div>
           </section>
 
+          {/* NEW: Security Infrastructure */}
+          <SecurityInfrastructure />
+
           {/* Section 4: Interactive Toolset */}
           <InteractiveFeatureShowcase />
+          
+          {/* NEW: Innovation Roadmap */}
+          <InnovationRoadmap />
+          
         </Suspense>
       </main>
     </div>
