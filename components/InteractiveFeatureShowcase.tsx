@@ -96,7 +96,7 @@ const InteractiveFeatureShowcase: React.FC = () => {
                       {feature.detail}
                     </p>
                     <div className="mt-6 flex items-center text-xs font-black text-slate-900 group">
-                      Explore Tool <span className="ml-2 transition-transform group-hover:translate-x-1">-></span>
+                      Explore Tool <span className="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
                     </div>
                   </motion.div>
                 )}
