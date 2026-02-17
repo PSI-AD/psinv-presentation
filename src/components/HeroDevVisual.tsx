@@ -1,75 +1,117 @@
 import React from 'react';
 
-const tools = [
-  { name: 'React.js', icon: '⚛️', type: 'Frontend Core' },
-  { name: 'Node.js', icon: '🟢', type: 'Backend Engine' },
-  { name: 'TypeScript', icon: '📘', type: 'Architecture' },
-  { name: 'Tailwind CSS', icon: '🌊', type: 'UI Framework' },
-  { name: 'Firebase', icon: '🔥', type: 'Cloud Database' },
-  { name: 'Vercel', icon: '🚀', type: 'Edge Network' },
-  { name: 'Figma', icon: '🎨', type: 'UX Design' },
-  { name: 'GitHub', icon: '🐙', type: 'Version Control' },
-  { name: 'Lighthouse', icon: '🚥', type: 'Performance QA' },
-  { name: 'Semrush', icon: '🎯', type: 'SEO Analytics' },
-];
-
 const HeroDevVisual: React.FC = () => {
   return (
-    <section className="relative pt-10 pb-20 px-6 min-h-[900px] flex flex-col bg-[#F4F7FB] overflow-hidden">
-      
-      {/* Embedded Header Elements (Replaces the old white navbar) */}
-      <div className="w-full max-w-7xl mx-auto flex justify-between items-center z-50 mb-20">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-monday-blue rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg">P</div>
-          <span className="text-2xl font-black text-slate-900 tracking-tighter">PSINV <span className="font-bold text-slate-400 text-sm tracking-normal">| Web Dev Dept</span></span>
+    <section className="relative pt-20 pb-32 px-6 bg-[#F4F7FB] overflow-hidden min-h-[900px] flex flex-col">
+      <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center text-center">
+
+        {/* Top Badge */}
+        <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Enterprise Architecture</span>
         </div>
-        <a href="https://psinv.net" target="_blank" rel="noreferrer" className="px-6 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-black text-monday-blue shadow-lg hover:border-monday-blue transition-all flex items-center gap-2">
-          Visit Platform &rarr;
-        </a>
-      </div>
 
-      <div className="relative z-20 text-center mb-16">
-        <h1 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tight leading-[1.05] mb-6">
-          Powered by the <br/>
-          <span className="text-monday-blue">World's Best Tools.</span>
+        {/* Headline */}
+        <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-5xl">
+          Real Estate Intelligence, <br />
+          <span className="text-[#0073EA]">Engineered.</span>
         </h1>
-        <p className="text-xl text-slate-500 font-medium max-w-3xl mx-auto">
-          We utilize an elite stack of industry-leading technologies to engineer a real estate platform that is faster, smarter, and infinitely scalable.
-        </p>
-      </div>
 
-      {/* THE TECH WALL - Large, Clear, Non-Overlapping */}
-      <div className="relative z-20 w-full max-w-6xl mx-auto mb-20">
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-          {tools.map((tool) => (
-            <div key={tool.name} className="bg-white px-6 py-4 rounded-[20px] shadow-md border border-slate-100 flex items-center gap-4 hover:-translate-y-1 transition-transform">
-              <span className="text-4xl">{tool.icon}</span>
-              <div className="flex flex-col text-left">
-                <span className="font-black text-lg text-slate-900 leading-tight">{tool.name}</span>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{tool.type}</span>
+        {/* Sub-headline */}
+        <p className="text-xl text-slate-500 font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
+          A high-performance ecosystem built for scale, speed, and absolute accuracy. No gimmicks, just verified data.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
+          <button className="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-lg transition-all shadow-lg hover:-translate-y-1">
+            Explore Architecture
+          </button>
+          <button className="px-8 py-3.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-lg text-lg transition-all shadow-md hover:-translate-y-1">
+            View Live Metrics
+          </button>
+        </div>
+
+        {/* The Tech Stack Grid (Clean Text Only) */}
+        <div className="flex flex-wrap justify-center gap-8 mb-20 opacity-80">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-[#61DAFB]" />
+            <span className="text-sm font-bold text-slate-600">React</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-[#339933]" />
+            <span className="text-sm font-bold text-slate-600">Node.js</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-[#FFCA28]" />
+            <span className="text-sm font-bold text-slate-600">Firebase</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-black" />
+            <span className="text-sm font-bold text-slate-600">Vercel</span>
+          </div>
+        </div>
+
+        {/* The Visual Mockup (Static Dashboard UI) */}
+        <div className="w-full max-w-6xl mx-auto bg-white rounded-t-2xl shadow-2xl border border-slate-200 overflow-hidden">
+          {/* Mockup Header */}
+          <div className="h-14 bg-white border-b border-slate-100 flex items-center px-6 justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-3 h-3 rounded-full bg-slate-200" />
+              <div className="w-32 h-2 bg-slate-100 rounded-full" />
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-20 h-8 bg-slate-50 rounded-md" />
+              <div className="w-8 h-8 rounded-full bg-emerald-100 border border-emerald-200" />
+            </div>
+          </div>
+
+          {/* Mockup Body */}
+          <div className="flex h-[400px] bg-slate-50">
+            {/* Sidebar */}
+            <div className="w-64 border-r border-slate-100 bg-white p-6 space-y-4 hidden md:block">
+              <div className="w-full h-8 bg-slate-100 rounded-md" />
+              <div className="w-3/4 h-4 bg-slate-50 rounded-md" />
+              <div className="w-full h-4 bg-slate-50 rounded-md" />
+              <div className="w-5/6 h-4 bg-slate-50 rounded-md" />
+            </div>
+
+            {/* Main Content */}
+            <div className="flex-1 p-8 space-y-6 overflow-hidden">
+              <div className="flex justify-between items-end mb-8">
+                <div className="space-y-2">
+                  <div className="w-48 h-6 bg-slate-200 rounded-md" />
+                  <div className="w-32 h-4 bg-slate-100 rounded-md" />
+                </div>
+                <div className="w-24 h-8 bg-emerald-600 rounded-md" />
+              </div>
+
+              <div className="grid grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 h-32" />
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 h-32" />
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 h-32" />
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 h-48 w-full flex items-end justify-between gap-2 px-12 pb-4">
+                <div className="w-[8%] h-[40%] bg-emerald-100 rounded-t-sm" />
+                <div className="w-[8%] h-[60%] bg-emerald-200 rounded-t-sm" />
+                <div className="w-[8%] h-[80%] bg-emerald-300 rounded-t-sm" />
+                <div className="w-[8%] h-[50%] bg-emerald-200 rounded-t-sm" />
+                <div className="w-[8%] h-[70%] bg-emerald-400 rounded-t-sm" />
+                <div className="w-[8%] h-[90%] bg-emerald-500 rounded-t-sm" />
+                <div className="w-[8%] h-[60%] bg-emerald-300 rounded-t-sm" />
+                <div className="w-[8%] h-[80%] bg-emerald-500 rounded-t-sm" />
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
 
-      {/* The Central Laptop */}
-      <div className="relative z-20 w-full max-w-5xl mx-auto mt-auto">
-        <div className="aspect-[16/9] md:aspect-[21/9] bg-slate-900 rounded-t-[24px] border-[10px] border-b-0 border-slate-800 shadow-2xl flex flex-col">
-          <div className="h-8 bg-slate-950 flex items-center px-4 space-x-2 border-b border-white/5">
-            <div className="w-3 h-3 rounded-full bg-red-500"/><div className="w-3 h-3 rounded-full bg-yellow-500"/><div className="w-3 h-3 rounded-full bg-green-500"/>
-          </div>
-          <div className="flex-1 bg-gradient-to-br from-[#111217] to-[#1A1B20] flex items-center justify-center p-10">
-             <div className="text-center">
-               <div className="text-4xl mb-4">✅</div>
-               <h2 className="text-4xl md:text-5xl font-black text-white mb-2">Ecosystem Integrated.</h2>
-               <p className="text-monday-green font-bold uppercase tracking-widest text-sm">All systems nominal.</p>
-             </div>
-          </div>
-        </div>
-        <div className="w-[105%] -ml-[2.5%] h-5 bg-slate-300 rounded-b-[16px] shadow-2xl" />
       </div>
     </section>
   );
 };
+
 export default HeroDevVisual;
