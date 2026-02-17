@@ -9,6 +9,8 @@ const InteractiveFeatureShowcase = React.lazy(() => import('./components/Interac
 const AiPipelineSection = React.lazy(() => import('./components/AiPipelineSection'));
 const SecurityInfrastructure = React.lazy(() => import('./components/SecurityInfrastructure'));
 const InnovationRoadmap = React.lazy(() => import('./components/InnovationRoadmap'));
+const AiLayerSection = React.lazy(() => import('./components/AiLayerSection'));
+const IntegrationsSection = React.lazy(() => import('./components/IntegrationsSection'));
 
 const App: React.FC = () => {
   return (
@@ -58,6 +60,10 @@ const App: React.FC = () => {
 
           {/* Section 4: Interactive Toolset */}
           <InteractiveFeatureShowcase />
+          
+          {/* NEW: AI Layer & Integrations */}
+          <AiLayerSection />
+          <IntegrationsSection />
           
           {/* NEW: Innovation Roadmap */}
           <InnovationRoadmap />
