@@ -1,74 +1,14 @@
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PSINV | Real Estate Intelligence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Figtree', 'sans-serif'],
-            },
-            colors: {
-              monday: {
-                blue: '#0073EA',
-                green: '#00C875',
-                red: '#E2445C',
-                yellow: '#FFCB00',
-                dark: '#18191C',
-                slate: '#2B2C32'
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-        body {
-            font-family: 'Figtree', sans-serif;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-        .glass-panel {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .dark .glass-panel {
-          background: rgba(0, 0, 0, 0.4);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        @keyframes gradient-x {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .animate-gradient-x {
-            background-size: 200% 200%;
-            animation: gradient-x 6s ease infinite;
-        }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "framer-motion": "https://esm.sh/framer-motion@11.11.11?external=react,react-dom",
-    "recharts": "https://esm.sh/recharts@2.15.0?external=react,react-dom",
-    "react-dom/": "https://esm.sh/react-dom@19.0.0/",
-    "react/": "https://esm.sh/react@19.0.0/"
-  }
-}
-</script>
-</head>
-<body class="bg-white dark:bg-[#18191C] text-slate-900 dark:text-slate-100 antialiased">
+  </head>
+  <body>
     <div id="root"></div>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
