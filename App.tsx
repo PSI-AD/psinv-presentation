@@ -11,6 +11,10 @@ const SecurityInfrastructure = React.lazy(() => import('./components/SecurityInf
 const InnovationRoadmap = React.lazy(() => import('./components/InnovationRoadmap'));
 const AiLayerSection = React.lazy(() => import('./components/AiLayerSection'));
 const IntegrationsSection = React.lazy(() => import('./components/IntegrationsSection'));
+const UxDesignHub = React.lazy(() => import('./components/UxDesignHub'));
+const PerformanceAudit = React.lazy(() => import('./components/PerformanceAudit'));
+const FinalCallToAction = React.lazy(() => import('./components/FinalCallToAction'));
+
 
 const App: React.FC = () => {
   return (
@@ -64,6 +68,11 @@ const App: React.FC = () => {
           {/* NEW: AI Layer & Integrations */}
           <AiLayerSection />
           <IntegrationsSection />
+
+          {/* NEW: UX, Performance, Final CTA */}
+          <UxDesignHub />
+          <PerformanceAudit />
+          <FinalCallToAction />
           
           {/* NEW: Innovation Roadmap */}
           <InnovationRoadmap />
