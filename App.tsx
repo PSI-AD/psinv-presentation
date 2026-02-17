@@ -3,13 +3,13 @@ import PremiumHero from './components/PremiumHero';
 import TeamRolesSection from './components/TeamRolesSection';
 import IdeaTimelineSection from './components/IdeaTimelineSection';
 import AuditFlowchartSection from './components/AuditFlowchartSection';
+import DepartmentsServedSection from './components/DepartmentsServedSection';
 import CoreTechnologySearch from './components/CoreTechnologySearch';
 import PerformanceScaleSection from './components/PerformanceScaleSection';
 import FinalCallToAction from './components/FinalCallToAction';
 import ClosingSections from './components/ClosingSections';
 
 const App: React.FC = () => {
-  // Ensure we start in Light Mode for the top section
   useEffect(() => {
     document.documentElement.classList.remove('dark');
   }, []);
@@ -17,7 +17,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen font-sans selection:bg-[#0073EA] selection:text-white">
       
-      {/* 1. LIGHT THEME TOP (Hero, Team, Process) */}
+      {/* 1. LIGHT THEME TOP */}
       <main className="bg-white text-slate-900">
         <PremiumHero />
         <TeamRolesSection />
@@ -25,12 +25,14 @@ const App: React.FC = () => {
         <AuditFlowchartSection />
       </main>
 
-      {/* 2. DARK THEME BOTTOM (Tech, Stats, CTA) */}
+      {/* 2. THE NEW DEPARTMENTS TRANSITION (Dark) */}
+      <DepartmentsServedSection />
+
+      {/* 3. DARK THEME BOTTOM */}
       <div className="bg-[#111217] text-white">
         <CoreTechnologySearch />
         <PerformanceScaleSection />
         
-        {/* Dark Call to Action */}
         <div className="py-24 px-6 max-w-5xl mx-auto">
           <div className="bg-[#1A1B20] border border-white/10 rounded-[32px] p-16 text-center shadow-2xl">
             <h2 className="text-4xl md:text-5xl font-black mb-6">
@@ -46,7 +48,7 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. LIGHT FOOTER (Closing Links) */}
+      {/* 4. LIGHT FOOTER */}
       <div className="bg-white text-slate-900 border-t border-slate-100">
         <ClosingSections />
       </div>
