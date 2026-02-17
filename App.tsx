@@ -25,9 +25,9 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-monday-blue rounded-lg flex items-center justify-center text-white font-black text-lg">P</div>
-            <span className="text-2xl font-black text-monday-navy tracking-tighter">PSINV <span className="font-medium text-gray-400 text-sm tracking-normal">| Web Dev Dept</span></span>
+            <span className="text-2xl font-black text-monday-navy tracking-tighter">PSINV <span className="font-medium text-gray-500 text-sm tracking-normal">| Web Dev Dept</span></span>
           </div>
-          <button className="px-5 py-2 bg-monday-blue text-white text-sm font-bold rounded-full hover:bg-blue-700 transition-colors">
+          <button className="px-5 py-2 bg-monday-blue text-white text-sm font-bold rounded-full hover:bg-blue-700 transition-colors" aria-label="View Architecture">
             View Architecture
           </button>
         </div>
