@@ -3,6 +3,7 @@ import React from 'react';
 import HeroDevVisual from './components/HeroDevVisual';
 import ArchitectureCard from './components/ArchitectureCard';
 import ScaleMetricsCard from './components/ScaleMetricsCard';
+import InteractiveFeatureShowcase from './components/InteractiveFeatureShowcase';
 
 const App: React.FC = () => {
   return (
@@ -41,6 +42,9 @@ const App: React.FC = () => {
              <ScaleMetricsCard />
           </div>
         </section>
+
+        {/* Section 4: Interactive Toolset */}
+        <InteractiveFeatureShowcase />
       </main>
     </div>
   );
