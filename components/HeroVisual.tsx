@@ -13,6 +13,9 @@ const HeroVisual: React.FC = () => {
           loop 
           muted 
           playsInline 
+          preload="metadata"
+          poster="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1920"
+          aria-hidden="true"
           className="w-full h-full object-cover grayscale opacity-50"
         >
           <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-42358-large.mp4" type="video/mp4" />

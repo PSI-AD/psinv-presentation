@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import HeroDevVisual from './components/HeroDevVisual';
-import ArchitectureCard from './components/ArchitectureCard';
-import ScaleMetricsCard from './components/ScaleMetricsCard';
-import InteractiveFeatureShowcase from './components/InteractiveFeatureShowcase';
+
+// Lazy load below-the-fold components
+const ArchitectureCard = React.lazy(() => import('./components/ArchitectureCard'));
+const ScaleMetricsCard = React.lazy(() => import('./components/ScaleMetricsCard'));
+const InteractiveFeatureShowcase = React.lazy(() => import('./components/InteractiveFeatureShowcase'));
 
 const App: React.FC = () => {
   return (
@@ -22,29 +24,31 @@ const App: React.FC = () => {
       </nav>
 
       <main className="pt-20">
-        {/* Section 1: Light Green Hero */}
+        {/* Section 1: Light Green Hero (Loaded Instantly) */}
         <section className="bg-monday-green-light pt-20 pb-32 px-6">
           <div className="max-w-7xl mx-auto">
             <HeroDevVisual />
           </div>
         </section>
 
-        {/* Section 2: Dark Green Engine Card */}
-        <section className="bg-white py-12 px-6 -mt-16 relative z-10">
-          <div className="max-w-6xl mx-auto">
-             <ArchitectureCard />
-          </div>
-        </section>
+        <Suspense fallback={<div className="h-96 flex items-center justify-center text-monday-blue font-bold">Loading Engine...</div>}>
+          {/* Section 2: Dark Green Engine Card */}
+          <section className="bg-white py-12 px-6 -mt-16 relative z-10">
+            <div className="max-w-6xl mx-auto">
+               <ArchitectureCard />
+            </div>
+          </section>
 
-        {/* Section 3: Deep Navy Scale Card */}
-        <section className="bg-white py-12 px-6">
-          <div className="max-w-6xl mx-auto">
-             <ScaleMetricsCard />
-          </div>
-        </section>
+          {/* Section 3: Deep Navy Scale Card */}
+          <section className="bg-white py-12 px-6">
+            <div className="max-w-6xl mx-auto">
+               <ScaleMetricsCard />
+            </div>
+          </section>
 
-        {/* Section 4: Interactive Toolset */}
-        <InteractiveFeatureShowcase />
+          {/* Section 4: Interactive Toolset */}
+          <InteractiveFeatureShowcase />
+        </Suspense>
       </main>
     </div>
   );
