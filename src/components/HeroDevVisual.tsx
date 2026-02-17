@@ -32,6 +32,22 @@ const HeroDevVisual: React.FC = () => {
   return (
     <section className="relative pt-32 pb-20 px-6 min-h-[900px] flex flex-col items-center justify-center bg-gradient-to-b from-[#F4F7FB] to-white overflow-hidden">
       
+      {/* Embedded Header Elements */}
+      <div className="absolute top-0 left-0 w-full p-8 z-50 flex justify-between items-start pointer-events-auto">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-monday-blue rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/20">P</div>
+          <span className="text-2xl font-black text-slate-900 tracking-tighter">PSINV <span className="font-bold text-slate-400 text-sm tracking-normal">| Web Dev Dept</span></span>
+        </div>
+        <a 
+          href="https://psinv.net" 
+          target="_blank" 
+          rel="noreferrer"
+          className="px-6 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-black text-monday-blue shadow-lg hover:border-monday-blue hover:shadow-blue-500/20 transition-all flex items-center gap-2"
+        >
+          Visit Platform <span className="text-lg leading-none">&rarr;</span>
+        </a>
+      </div>
+
       {/* Background Ambience */}
       <div className="absolute top-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-monday-blue/5 rounded-full blur-[100px]" />
