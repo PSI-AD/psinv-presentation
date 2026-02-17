@@ -1,91 +1,75 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
-const techGroups = {
-  languages: { color: 'from-blue-400 to-indigo-500', icons: ['⚛️ React', '📘 TS', '🟢 Node'] },
-  tools: { color: 'from-purple-400 to-pink-500', icons: ['🛠️ Webpack', '📦 Git', '🎨 Figma'] },
-  audit: { color: 'from-green-400 to-emerald-500', icons: ['📈 Lighthouse', '🔍 Semrush', '⚡ Vitals'] },
-  infra: { color: 'from-cyan-400 to-blue-500', icons: ['☁️ Firebase', '🛡️ Cloudflare', '🚀 Vercel'] },
-};
+const tools = [
+  { name: 'React.js', icon: '⚛️', type: 'Frontend Core' },
+  { name: 'Node.js', icon: '🟢', type: 'Backend Engine' },
+  { name: 'TypeScript', icon: '📘', type: 'Architecture' },
+  { name: 'Tailwind CSS', icon: '🌊', type: 'UI Framework' },
+  { name: 'Firebase', icon: '🔥', type: 'Cloud Database' },
+  { name: 'Vercel', icon: '🚀', type: 'Edge Network' },
+  { name: 'Figma', icon: '🎨', type: 'UX Design' },
+  { name: 'GitHub', icon: '🐙', type: 'Version Control' },
+  { name: 'Lighthouse', icon: '🚥', type: 'Performance QA' },
+  { name: 'Semrush', icon: '🎯', type: 'SEO Analytics' },
+];
 
 const HeroDevVisual: React.FC = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const containerVariants = {
-    rest: {},
-    hover: {}
-  };
-
-  // Animation to pull elements to center
-  const convergeVariant = (xOffset: number, yOffset: number) => ({
-    rest: { x: xOffset, y: yOffset, scale: 1, opacity: 0.8 },
-    hover: { x: 0, y: 0, scale: 0.8, opacity: 0.4, transition: { type: 'spring', stiffness: 100, damping: 20 } }
-  });
-
   return (
-    <motion.div 
-      className="relative min-h-[700px] flex flex-col items-center justify-center overflow-hidden"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      variants={containerVariants}
-      initial="rest"
-      animate={isHovered ? "hover" : "rest"}
-    >
-      {/* Main Headlines */}
-      <div className="relative z-20 text-center mb-8 pointer-events-none">
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-6xl md:text-8xl font-black text-monday-navy leading-[1.05] tracking-tight mb-6">
-          Develop with <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-monday-blue to-monday-green-dark">Ultimate Power.</span>
-        </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-xl text-gray-600 font-medium max-w-2xl mx-auto">
-          Hover to see how we converge the world's best technologies into one seamless real estate engine.
-        </motion.p>
+    <section className="relative pt-10 pb-20 px-6 min-h-[900px] flex flex-col bg-[#F4F7FB] overflow-hidden">
+      
+      {/* Embedded Header Elements */}
+      <div className="w-full max-w-7xl mx-auto flex justify-between items-center z-50 mb-20">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-monday-blue rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg">P</div>
+          <span className="text-2xl font-black text-slate-900 tracking-tighter">PSINV <span className="font-bold text-slate-400 text-sm tracking-normal">| Web Dev Dept</span></span>
+        </div>
+        <a href="https://psinv.net" target="_blank" rel="noreferrer" className="px-6 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-black text-monday-blue shadow-lg hover:border-monday-blue transition-all flex items-center gap-2">
+          Visit Platform &rarr;
+        </a>
       </div>
 
-      {/* FLOATING TECH GROUPS */}
-      {/* Top Left: Languages */}
-      <motion.div variants={convergeVariant(-350, -200)} className="absolute z-10 hidden lg:flex flex-col gap-3 p-4 rounded-3xl bg-white/40 backdrop-blur-md border border-white/50 shadow-xl">
-        <div className="text-xs font-black uppercase tracking-widest text-blue-600 mb-2">Core Stack</div>
-        <div className="flex gap-2">{techGroups.languages.icons.map(ico => <span key={ico} className="px-3 py-1.5 bg-white rounded-full text-sm font-bold shadow-sm">{ico}</span>)}</div>
-      </motion.div>
+      <div className="relative z-20 text-center mb-16">
+        <h1 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tight leading-[1.05] mb-6">
+          Powered by the <br/>
+          <span className="text-monday-blue">World's Best Tools.</span>
+        </h1>
+        <p className="text-xl text-slate-500 font-medium max-w-3xl mx-auto">
+          We utilize an elite stack of industry-leading technologies to engineer a real estate platform that is faster, smarter, and infinitely scalable.
+        </p>
+      </div>
 
-      {/* Top Right: Tools */}
-      <motion.div variants={convergeVariant(350, -200)} className="absolute z-10 hidden lg:flex flex-col gap-3 p-4 rounded-3xl bg-white/40 backdrop-blur-md border border-white/50 shadow-xl text-right items-end">
-        <div className="text-xs font-black uppercase tracking-widest text-purple-600 mb-2">Build Chain</div>
-        <div className="flex gap-2">{techGroups.tools.icons.map(ico => <span key={ico} className="px-3 py-1.5 bg-white rounded-full text-sm font-bold shadow-sm">{ico}</span>)}</div>
-      </motion.div>
-
-      {/* Bottom Left: Audit */}
-      <motion.div variants={convergeVariant(-380, 150)} className="absolute z-10 hidden lg:flex flex-col gap-3 p-4 rounded-3xl bg-white/40 backdrop-blur-md border border-white/50 shadow-xl">
-        <div className="text-xs font-black uppercase tracking-widest text-green-600 mb-2">Performance QA</div>
-        <div className="flex gap-2">{techGroups.audit.icons.map(ico => <span key={ico} className="px-3 py-1.5 bg-white rounded-full text-sm font-bold shadow-sm">{ico}</span>)}</div>
-      </motion.div>
-
-      {/* Bottom Right: Infra */}
-      <motion.div variants={convergeVariant(380, 150)} className="absolute z-10 hidden lg:flex flex-col gap-3 p-4 rounded-3xl bg-white/40 backdrop-blur-md border border-white/50 shadow-xl text-right items-end">
-        <div className="text-xs font-black uppercase tracking-widest text-cyan-600 mb-2">Infrastructure</div>
-        <div className="flex gap-2">{techGroups.infra.icons.map(ico => <span key={ico} className="px-3 py-1.5 bg-white rounded-full text-sm font-bold shadow-sm">{ico}</span>)}</div>
-      </motion.div>
-
-
-      {/* Central Laptop (The Target) */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }}
-        className="relative z-0 mt-12 w-full max-w-4xl"
-      >
-         <div className="aspect-[16/9] bg-monday-navy rounded-t-[32px] border-[8px] border-b-0 border-slate-800 overflow-hidden relative shadow-2xl">
-            {/* Screen Content */}
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay"></div>
-            <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-monday-navy to-[#0073ea]">
-               <motion.div animate={isHovered ? { scale: 1.1, textShadow: "0 0 20px rgba(255,255,255,0.5)" } : {}} className="text-white text-4xl font-black flex flex-col items-center transition-all">
-                 <span className="text-6xl mb-4">💠</span>
-                 PSINV Unified Engine
-                 {isHovered && <motion.span initial={{opacity:0}} animate={{opacity:1}} className="text-sm uppercase tracking-widest mt-2 text-blue-200">Technologies Integrated</motion.span>}
-               </motion.div>
+      {/* THE TECH WALL */}
+      <div className="relative z-20 w-full max-w-6xl mx-auto mb-20">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          {tools.map((tool) => (
+            <div key={tool.name} className="bg-white px-6 py-4 rounded-[20px] shadow-md border border-slate-100 flex items-center gap-4 hover:-translate-y-1 transition-transform">
+              <span className="text-4xl">{tool.icon}</span>
+              <div className="flex flex-col text-left">
+                <span className="font-black text-lg text-slate-900 leading-tight">{tool.name}</span>
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{tool.type}</span>
+              </div>
             </div>
-         </div>
-         <div className="w-full h-6 bg-slate-700 rounded-b-[32px] shadow-xl relative"><div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-2 bg-slate-600 rounded-b-xl"/></div>
-      </motion.div>
-    </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* The Central Laptop */}
+      <div className="relative z-20 w-full max-w-5xl mx-auto mt-auto">
+        <div className="aspect-[16/9] md:aspect-[21/9] bg-slate-900 rounded-t-[24px] border-[10px] border-b-0 border-slate-800 shadow-2xl flex flex-col">
+          <div className="h-8 bg-slate-950 flex items-center px-4 space-x-2 border-b border-white/5">
+            <div className="w-3 h-3 rounded-full bg-red-500"/><div className="w-3 h-3 rounded-full bg-yellow-500"/><div className="w-3 h-3 rounded-full bg-green-500"/>
+          </div>
+          <div className="flex-1 bg-gradient-to-br from-[#111217] to-[#1A1B20] flex items-center justify-center p-10">
+             <div className="text-center">
+               <div className="text-4xl mb-4">✅</div>
+               <h2 className="text-4xl md:text-5xl font-black text-white mb-2">Ecosystem Integrated.</h2>
+               <p className="text-monday-green font-bold uppercase tracking-widest text-sm">All systems nominal.</p>
+             </div>
+          </div>
+        </div>
+        <div className="w-[105%] -ml-[2.5%] h-5 bg-slate-300 rounded-b-[16px] shadow-2xl" />
+      </div>
+    </section>
   );
 };
 export default HeroDevVisual;
