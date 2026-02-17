@@ -16,6 +16,25 @@ import InteractiveToolsSection from './components/InteractiveToolsSection';
 import ConversionUXSection from './components/ConversionUXSection';
 import PerformanceScaleSection from './components/PerformanceScaleSection';
 
+const tailwindLink = document.createElement('script');
+tailwindLink.src = "https://cdn.tailwindcss.com";
+document.head.appendChild(tailwindLink);
+
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        mondayBlue: '#0073EA',
+        mondayGreen: '#00C875',
+        mondayRed: '#E2445C',
+        mondayYellow: '#FFCB00',
+      }
+    }
+  }
+}
+
 const bentoItemVariants: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: { 
