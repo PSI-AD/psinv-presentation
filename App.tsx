@@ -1,57 +1,46 @@
 
-import React, { useState, useEffect } from 'react';
-import HeroVisual from './components/HeroVisual';
-import CoreTechnologySearch from './components/CoreTechnologySearch';
-import PerformanceScaleSection from './components/PerformanceScaleSection';
-import ConversionUXSection from './components/ConversionUXSection';
-import ComparisonEngine from './components/ComparisonEngine';
-import ClosingSections from './components/ClosingSections';
+import React from 'react';
+import HeroDevVisual from './components/HeroDevVisual';
+import ArchitectureCard from './components/ArchitectureCard';
+import ScaleMetricsCard from './components/ScaleMetricsCard';
 
 const App: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
-
   return (
-    <div className="min-h-screen bg-white dark:bg-[#18191C] transition-colors duration-500">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/95 dark:bg-[#18191C]/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 transition-colors duration-500">
+    <div className="min-h-screen bg-white font-sans selection:bg-monday-blue selection:text-white">
+      {/* Premium Navbar */}
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#0073EA] rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/20">P</div>
-            <span className="text-2xl font-black text-slate-900 dark:text-white tracking-tighter">PSINV</span>
+            <div className="w-8 h-8 bg-monday-blue rounded-lg flex items-center justify-center text-white font-black text-lg">P</div>
+            <span className="text-2xl font-black text-monday-navy tracking-tighter">PSINV <span className="font-medium text-gray-400 text-sm tracking-normal">| Web Dev Dept</span></span>
           </div>
-          <button 
-            onClick={() => setIsDarkMode(!isDarkMode)} 
-            className="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white font-bold text-sm hover:ring-2 ring-[#0073EA] transition-all"
-          >
-            {isDarkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
+          <button className="px-5 py-2 bg-monday-blue text-white text-sm font-bold rounded-full hover:bg-blue-700 transition-colors">
+            View Architecture
           </button>
         </div>
       </nav>
 
       <main className="pt-20">
-        <HeroVisual />
-        {/* Alternating Backgrounds for Rhythm */}
-        <section className="py-24 px-6 bg-[#F9FAFB] dark:bg-[#1A1B20] transition-colors duration-500">
-          <CoreTechnologySearch />
+        {/* Section 1: Light Green Hero */}
+        <section className="bg-monday-green-light pt-20 pb-32 px-6">
+          <div className="max-w-7xl mx-auto">
+            <HeroDevVisual />
+          </div>
         </section>
-        <section className="py-24 px-6 bg-white dark:bg-[#18191C] transition-colors duration-500">
-          <PerformanceScaleSection />
+
+        {/* Section 2: Dark Green Engine Card */}
+        <section className="bg-white py-12 px-6 -mt-16 relative z-10">
+          <div className="max-w-6xl mx-auto">
+             <ArchitectureCard />
+          </div>
         </section>
-        <section className="py-24 px-6 bg-[#F9FAFB] dark:bg-[#1A1B20] transition-colors duration-500">
-          <ConversionUXSection />
+
+        {/* Section 3: Deep Navy Scale Card */}
+        <section className="bg-white py-12 px-6">
+          <div className="max-w-6xl mx-auto">
+             <ScaleMetricsCard />
+          </div>
         </section>
-        <section className="py-24 px-6 bg-white dark:bg-[#18191C] transition-colors duration-500">
-          <ComparisonEngine />
-        </section>
-        <ClosingSections />
       </main>
     </div>
   );
