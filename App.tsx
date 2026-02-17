@@ -1,6 +1,7 @@
 
 import React, { Suspense } from 'react';
 import HeroDevVisual from './components/HeroDevVisual';
+import PremiumHero from './components/PremiumHero';
 
 // Lazy load below-the-fold components
 const ArchitectureCard = React.lazy(() => import('./components/ArchitectureCard'));
@@ -33,6 +34,10 @@ const App: React.FC = () => {
       </nav>
 
       <main className="pt-20">
+        
+        {/* NEW: Jaw-Dropping Hero */}
+        <PremiumHero />
+
         {/* Section 1: Light Green Hero (Loaded Instantly) */}
         <section className="bg-monday-green-light pt-20 pb-32 px-6">
           <div className="max-w-7xl mx-auto">
