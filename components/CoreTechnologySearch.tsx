@@ -1,45 +1,88 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const CoreTechnologySearch: React.FC = () => {
   return (
-    <section className="px-6">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        <div className="w-full lg:w-1/2">
-          <div className="bg-white dark:bg-slate-800 rounded-[32px] p-10 shadow-xl border border-slate-100 dark:border-slate-700">
-            <div className="flex items-center space-x-4 mb-8 border-b border-slate-100 dark:border-slate-700 pb-6">
-              <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-mondayBlue text-2xl font-black">⚛️</div>
-              <div>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">React.js Architecture</h3>
-                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Zero-Reload Framework</p>
+    <section className="relative py-32 overflow-hidden bg-slate-50 dark:bg-[#0f111a]">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        
+        {/* Left: Interactive Visual */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="relative order-2 lg:order-1"
+        >
+          <div className="relative z-10 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-2xl border border-slate-200 dark:border-slate-700">
+            {/* Code Block Illusion */}
+            <div className="flex gap-2 mb-6">
+              <div className="w-3 h-3 rounded-full bg-red-500"/>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"/>
+              <div className="w-3 h-3 rounded-full bg-green-500"/>
+            </div>
+            <div className="font-mono text-sm space-y-4">
+              <div className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center text-2xl">⚛️</div>
+                <div>
+                  <div className="text-blue-600 dark:text-blue-400 font-bold">React Architecture</div>
+                  <div className="text-slate-500 text-xs">Zero-Reload Framework</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center text-2xl">🧠</div>
+                <div>
+                  <div className="text-purple-600 dark:text-purple-400 font-bold">AI Structuring</div>
+                  <div className="text-slate-500 text-xs">Automated Data Organization</div>
+                </div>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-purple-50 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-500 text-2xl font-black">🧠</div>
-              <div>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">AI Data Structuring</h3>
-                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Automated Organization</p>
-              </div>
-            </div>
+            
+            {/* Floating Badge */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 bg-gradient-to-r from-monday-blue to-cyan-500 text-white px-6 py-3 rounded-xl font-bold shadow-lg"
+            >
+              10x Faster
+            </motion.div>
           </div>
+          
+          {/* Background Decorative Elements */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-blue-100/50 to-purple-100/50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-full blur-3xl -z-10" />
+        </motion.div>
+
+        {/* Right: Content */}
+        <div className="order-1 lg:order-2 space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] mb-6">
+              Built with React & AI.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-monday-blue to-purple-600">Engineered for Humans.</span>
+            </h2>
+            <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-lg">
+              We utilized React to build a frictionless experience. Instead of loading new pages, our platform filters thousands of properties instantly—feeling more like a native app than a website.
+            </p>
+          </motion.div>
+
+          <motion.div 
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             viewport={{ once: true }}
+             transition={{ delay: 0.2 }}
+             className="flex flex-wrap gap-3"
+          >
+            {['Instant Search', 'Predictive Loading', 'Automated Freshness'].map((tag) => (
+              <span key={tag} className="px-5 py-2.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
+                {tag}
+              </span>
+            ))}
+          </motion.div>
         </div>
 
-        <div className="w-full lg:w-1/2 space-y-8">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
-            Built with React & AI.<br />
-            <span className="text-mondayBlue">Engineered for the User.</span>
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-            We utilized React to build a frictionless experience. Instead of loading new pages, our platform filters thousands of properties instantly—feeling more like a native app than a website.
-          </p>
-          <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-            Behind the scenes, AI algorithms ensure our massive data sets are perfectly organized, presenting complex market insights in a clean, digestible format that drives decisions.
-          </p>
-          <div className="flex flex-wrap gap-3 pt-4">
-            <span className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-full border border-slate-200 dark:border-slate-700">Instant Search</span>
-            <span className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-full border border-slate-200 dark:border-slate-700">Predictive Loading</span>
-            <span className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-full border border-slate-200 dark:border-slate-700">Automated Freshness</span>
-          </div>
-        </div>
       </div>
     </section>
   );
