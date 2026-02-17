@@ -4,64 +4,46 @@ import { motion } from 'framer-motion';
 
 const ArchitectureCard: React.FC = () => {
   return (
-    <div className="bg-monday-green-dark rounded-[48px] p-12 text-white shadow-2xl overflow-hidden relative group hover:scale-[1.01] transition-transform duration-500">
-      <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
-        <div className="w-full md:w-1/2 space-y-8">
-          <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-3xl backdrop-blur-md shadow-inner border border-white/20">
-            🚀
-          </div>
-          <div>
-            <span className="text-monday-green-light font-bold text-sm tracking-widest uppercase mb-2 block">Core Technology</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
-              React.js + AI Core
-            </h2>
-          </div>
-          <p className="text-white/90 text-lg font-medium leading-relaxed max-w-md">
-            We moved beyond static pages. Our platform is a dynamic application that pre-fetches data, rendering complex market analysis in milliseconds.
-          </p>
-          <div className="flex flex-wrap gap-3 pt-4">
-             {['Zero-Reload Navigation', 'Predictive AI', 'Instant Search'].map(tag => (
-               <motion.span 
-                 whileHover={{ scale: 1.05 }}
-                 key={tag} 
-                 className="px-5 py-2.5 bg-white/10 rounded-full text-sm font-bold border border-white/20 backdrop-blur-sm hover:bg-white/20 cursor-default"
-               >
-                 {tag}
-               </motion.span>
-             ))}
-          </div>
-        </div>
-        
-        <div className="w-full md:w-1/2 bg-monday-navy/50 rounded-3xl p-8 border border-white/10 backdrop-blur-md shadow-2xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500">
-           <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-4">
-              <div className="w-3 h-3 rounded-full bg-red-400"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-              <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              <div className="text-xs text-slate-400 ml-2 font-mono">AnalysisEngine.tsx</div>
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="bg-monday-green-dark rounded-[40px] p-12 md:p-16 flex flex-col md:flex-row items-center gap-16 card-shadow text-white overflow-hidden relative"
+    >
+      <div className="absolute -top-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-[80px]" />
+      
+      <div className="w-full md:w-1/2 relative z-10 space-y-8">
+        <h2 className="text-4xl md:text-5xl font-black leading-tight">
+          Your go-to property <br/>intelligence platform.
+        </h2>
+        <p className="text-lg text-green-100 font-medium leading-relaxed">
+          We engineered a custom React architecture that eliminates page reloads. Users filter thousands of properties instantly, creating a frictionless journey from discovery to conversion.
+        </p>
+        <ul className="space-y-4">
+          {['Zero-reload state management', 'Component-driven UI library', 'Real-time API integrations'].map((item, i) => (
+            <li key={i} className="flex items-center gap-4 font-bold text-white">
+              <div className="w-6 h-6 rounded-full bg-white text-monday-green-dark flex items-center justify-center text-xs">✓</div>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <button className="px-6 py-3 bg-white text-monday-green-dark font-bold rounded-full hover:bg-green-50 transition-colors">
+          Explore Architecture
+        </button>
+      </div>
+
+      <div className="w-full md:w-1/2 relative z-10">
+        <div className="bg-monday-navy rounded-[24px] p-6 shadow-2xl border border-white/10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+           <div className="flex justify-between items-center mb-6">
+              <div className="text-sm font-bold text-white/50 uppercase tracking-widest">Component Tree</div>
+              <div className="px-3 py-1 bg-monday-green-dark/30 text-monday-green-light rounded-full text-xs font-bold">Active</div>
            </div>
-           <div className="space-y-4 font-mono text-sm text-green-200 leading-relaxed overflow-x-auto">
-             <div className="flex flex-wrap gap-2">
-                <span className="text-monday-yellow">import</span> 
-                <span className="text-white">AnalysisEngine</span>
-                <span className="text-monday-yellow">from</span>
-                <span className="text-green-300">'@ai/core'</span>;
-             </div>
-             <div className="pl-4 border-l-2 border-white/10">
-               <span className="text-purple-300">const</span> result = <span className="text-blue-300">await</span> ai.predict({'{'} <br/>
-               &nbsp;&nbsp;market: <span className="text-green-300">'Dubai'</span>,<br/>
-               &nbsp;&nbsp;roi: <span className="text-orange-300">8.5</span><br/>
-               {'}'});
-             </div>
-             <div className="text-slate-400 opacity-50 text-xs">/* Optimized for 60fps rendering */</div>
+           <div className="space-y-3">
+              <div className="h-12 bg-white/5 rounded-xl border border-white/10 flex items-center px-4"><div className="h-2 w-1/3 bg-white/20 rounded-full"/></div>
+              <div className="h-12 bg-white/10 rounded-xl border border-white/20 flex items-center px-4 ml-6"><div className="h-2 w-1/2 bg-white/40 rounded-full"/></div>
+              <div className="h-12 bg-white/5 rounded-xl border border-white/10 flex items-center px-4 ml-12"><div className="h-2 w-1/4 bg-white/20 rounded-full"/></div>
            </div>
         </div>
       </div>
-      
-      {/* Background Pattern */}
-      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-    </div>
+    </motion.div>
   );
 };
-
 export default ArchitectureCard;
