@@ -7,7 +7,7 @@ const Hotspot: React.FC<{ x: string; y: string; label: string }> = ({ x, y, labe
 
   return (
     <div 
-      className="absolute z-30" 
+      className="absolute z-30 pointer-events-auto" 
       style={{ left: x, top: y }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -57,7 +57,7 @@ const DesignSystemSection: React.FC = () => {
               Data density is the enemy of decision making. To prevent cognitive overload, we engineered a custom typography system focused on speed.
             </p>
             <p>
-              By utilizing specialized font hierarchies that scale across 4K monitors and mobile viewports, we ensure payment plans and technical amenities are effortslessly readable at any resolution.
+              By utilizing specialized font hierarchies that scale across 4K monitors and mobile viewports, we ensure payment plans and technical amenities are effortlessly readable at any resolution.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ const DesignSystemSection: React.FC = () => {
           viewport={{ once: true }}
           className="w-full lg:w-[55%]"
         >
-          <div className="relative bg-slate-50 dark:bg-slate-800/80 rounded-[48px] p-8 md:p-16 border border-slate-100 dark:border-slate-700 shadow-xl overflow-hidden">
+          <div className="relative bg-slate-50 dark:bg-slate-800/80 rounded-[48px] p-8 md:p-16 border border-slate-100 dark:border-slate-700 shadow-xl overflow-hidden min-h-[500px]">
             <div className="flex justify-between items-center mb-16">
               <div>
                 <h3 className="text-3xl font-black text-slate-900 dark:text-white">Marina Vista</h3>
@@ -94,6 +94,8 @@ const DesignSystemSection: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative">
               <Hotspot x="10%" y="25%" label="High-contrast headings guide the eye instantly to key value metrics." />
+              <Hotspot x="85%" y="60%" label="Icon-driven layouts for amenities ensure rapid context scanning." />
+              
               <div className="space-y-8">
                 <div className="p-8 bg-white dark:bg-slate-900 rounded-[32px] border border-slate-100 dark:border-slate-700 shadow-sm relative overflow-hidden group hover:border-monday-blue transition-all">
                   <div className="absolute top-0 left-0 w-2 h-full bg-monday-blue" />
@@ -107,7 +109,6 @@ const DesignSystemSection: React.FC = () => {
                 </div>
               </div>
 
-              <Hotspot x="85%" y="60%" label="Icon-driven layouts for amenities ensure rapid context scanning." />
               <div className="bg-white dark:bg-slate-900 rounded-[32px] border border-slate-100 dark:border-slate-700 shadow-sm p-8">
                 <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-6 block">Amenities Matrix</span>
                 <div className="grid grid-cols-2 gap-6">
